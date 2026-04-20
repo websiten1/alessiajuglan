@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galerie — Alessia Juglan Nail Artist</title>
+  <meta name="description" content="Galerie de lucrări Alessia Juglan — manichiură premium, design 3D, French Glass și multe altele." />
+  <meta name="theme-color" content="#f5ece3" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Italiana&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-intro"></div>
+  <div class="scroll-progress"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div id="site-header"></div>
+
+  <section class="page-head">
+    <div class="hero__grain" aria-hidden="true"></div>
+    <div class="hero__orbs" aria-hidden="true">
+      <span class="orb orb--1"></span>
+      <span class="orb orb--3"></span>
+    </div>
+    <div class="container page-head__inner">
+      <p class="eyebrow eyebrow--center" style="animation:riseIn 0.9s var(--ease) both">Galerie</p>
+      <h1 class="page-head__title">
+        Lucrări <em>recente</em>.
+      </h1>
+      <p class="page-head__sub" style="animation:riseIn 0.9s 0.4s var(--ease) both">
+        Nuanțe, texturi și finisaje realizate pentru cliente care vor mai mult decât „doar o manichiură".
+      </p>
+      <div class="page-head__crumbs" style="animation:riseIn 0.9s 0.6s var(--ease) both">
+        <a href="index.html">Acasă</a> <span>/</span> <span style="color:var(--charcoal)">Galerie</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" style="padding-top:40px">
+    <div class="container">
+      <div class="services__tabs reveal" style="margin-bottom:40px">
+        <button class="service-tab is-active" data-gallery-tab="all">Toate</button>
+        <button class="service-tab" data-gallery-tab="nude">Nude &amp; Milky</button>
+        <button class="service-tab" data-gallery-tab="color">Culori vii</button>
+        <button class="service-tab" data-gallery-tab="art">Artistic &amp; 3D</button>
+        <button class="service-tab" data-gallery-tab="french">French &amp; Glass</button>
+      </div>
+
+      <div class="gallery__grid" data-stagger>
+        <div class="gallery__item gallery__item--tall" data-cat="nude">
+          <div class="gallery__art gallery__art--milky"></div>
+          <span class="gallery__label">Milky Base</span>
+        </div>
+        <div class="gallery__item" data-cat="french">
+          <div class="gallery__art gallery__art--chrome"></div>
+          <span class="gallery__label">French Glass</span>
+        </div>
+        <div class="gallery__item" data-cat="color">
+          <div class="gallery__art gallery__art--rose"></div>
+          <span class="gallery__label">Rose Blush</span>
+        </div>
+        <div class="gallery__item gallery__item--wide" data-cat="art">
+          <div class="gallery__art gallery__art--3d"></div>
+          <span class="gallery__label">3D Hand Painted</span>
+        </div>
+        <div class="gallery__item" data-cat="color">
+          <div class="gallery__art gallery__art--red"></div>
+          <span class="gallery__label">Classic Red</span>
+        </div>
+        <div class="gallery__item gallery__item--tall" data-cat="nude">
+          <div class="gallery__art gallery__art--nude"></div>
+          <span class="gallery__label">Nude Glow</span>
+        </div>
+        <div class="gallery__item" data-cat="color">
+          <div class="gallery__art gallery__art--burgundy"></div>
+          <span class="gallery__label">Burgundy Velvet</span>
+        </div>
+        <div class="gallery__item" data-cat="art">
+          <div class="gallery__art gallery__art--black"></div>
+          <span class="gallery__label">Midnight Gold</span>
+        </div>
+        <div class="gallery__item gallery__item--wide" data-cat="french">
+          <div class="gallery__art gallery__art--french"></div>
+          <span class="gallery__label">Classic French</span>
+        </div>
+        <div class="gallery__item" data-cat="art">
+          <div class="gallery__art gallery__art--marble"></div>
+          <span class="gallery__label">Marble Effect</span>
+        </div>
+        <div class="gallery__item gallery__item--tall" data-cat="color">
+          <div class="gallery__art gallery__art--magenta"></div>
+          <span class="gallery__label">Magenta Chic</span>
+        </div>
+        <div class="gallery__item" data-cat="nude">
+          <div class="gallery__art gallery__art--nude"></div>
+          <span class="gallery__label">Soft Nude</span>
+        </div>
+      </div>
+
+      <div class="gallery__cta reveal" style="margin-top:70px">
+        <p class="eyebrow eyebrow--center" style="margin-bottom:16px">Mai multe pe</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <a href="https://www.tiktok.com/@alessiajuglan" target="_blank" rel="noopener" class="btn btn--ghost">
+            TikTok
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+          <a href="https://www.instagram.com/alessiajuglan" target="_blank" rel="noopener" class="btn btn--ghost">
+            Instagram
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="container">
+      <p class="eyebrow eyebrow--center reveal">Îți place ce vezi?</p>
+      <h2 class="cta-band__title reveal">
+        Hai să creăm <em>setul tău</em>.
+      </h2>
+      <div class="reveal">
+        <a href="programare.html" class="btn btn--gold btn--lg" data-magnetic>Programează-te</a>
+      </div>
+    </div>
+    <div class="cta-band__deco">Galerie</div>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="services-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

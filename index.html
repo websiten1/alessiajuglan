@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alessia Juglan — Nail Artist | Manichiură Premium</title>
-  <meta name="description" content="Alessia Juglan Nail Tech — manichiură premium, construcție gel, design 3D și French Glass. Programări online pentru o experiență rafinată." />
+  <title>Alessia Juglan — Nail Artist | Manichiură Premium în Iași</title>
+  <meta name="description" content="Alessia Juglan Nail Tech — manichiură premium, construcție gel, design 3D și French Glass. Programări online 100% pe site." />
   <meta name="theme-color" content="#f5ece3" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,48 +15,35 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Cursor glow -->
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader__inner">
+      <div class="preloader__mark">A<span style="opacity:.6;margin:0 4px">·</span>J</div>
+      <div class="preloader__bar"></div>
+    </div>
+  </div>
+
+  <!-- Page intro overlay -->
+  <div class="page-intro"></div>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress"></div>
+
+  <!-- Cursor -->
   <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
 
-  <!-- Navigation -->
-  <header class="nav" id="nav">
-    <div class="nav__inner">
-      <a href="#top" class="nav__logo" aria-label="Alessia Juglan">
-        <span class="nav__logo-mark">A<span class="amp">·</span>J</span>
-        <span class="nav__logo-text">Alessia Juglan</span>
-      </a>
-
-      <nav class="nav__links" aria-label="Meniu principal">
-        <a href="#despre">Despre</a>
-        <a href="#servicii">Servicii</a>
-        <a href="#galerie">Galerie</a>
-        <a href="#recenzii">Recenzii</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <a href="https://book.heygoldie.com/alessiajuglan-nailtech" target="_blank" rel="noopener" class="btn btn--gold nav__cta">
-        <span>Programează-te</span>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
-      </a>
-
-      <button class="nav__burger" aria-label="Deschide meniul" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
-    <div class="nav__mobile" aria-hidden="true">
-      <a href="#despre">Despre</a>
-      <a href="#servicii">Servicii</a>
-      <a href="#galerie">Galerie</a>
-      <a href="#recenzii">Recenzii</a>
-      <a href="#contact">Contact</a>
-      <a href="https://book.heygoldie.com/alessiajuglan-nailtech" target="_blank" rel="noopener" class="btn btn--gold">Programează-te</a>
-    </div>
-  </header>
+  <!-- Nav (injected) -->
+  <div id="site-header"></div>
 
   <!-- Hero -->
   <section class="hero" id="top">
     <div class="hero__grain" aria-hidden="true"></div>
+    <div class="hero__orbs" aria-hidden="true">
+      <span class="orb orb--1"></span>
+      <span class="orb orb--2"></span>
+      <span class="orb orb--3"></span>
+    </div>
 
     <div class="hero__marquee" aria-hidden="true">
       <div class="hero__marquee-track">
@@ -82,9 +69,9 @@
       </div>
 
       <h1 class="hero__title">
-        <span class="hero__line">Unghii</span>
-        <span class="hero__line hero__line--italic">create cu</span>
-        <span class="hero__line hero__line--accent">atenție la detaliu.</span>
+        <span class="hero__line"><span>Unghii</span></span>
+        <span class="hero__line hero__line--italic"><span>create cu</span></span>
+        <span class="hero__line"><span>atenție la detaliu.</span></span>
       </h1>
 
       <p class="hero__sub">
@@ -93,20 +80,20 @@
       </p>
 
       <div class="hero__cta">
-        <a href="https://book.heygoldie.com/alessiajuglan-nailtech" target="_blank" rel="noopener" class="btn btn--gold btn--lg">
-          Rezervă o ședință
+        <a href="programare.html" class="btn btn--gold btn--lg" data-magnetic>
+          <span>Rezervă o ședință</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
-        <a href="#servicii" class="btn btn--ghost btn--lg">Vezi serviciile</a>
+        <a href="servicii.html" class="btn btn--ghost btn--lg">Vezi serviciile</a>
       </div>
 
       <div class="hero__stats">
         <div class="stat">
-          <div class="stat__num">23<span>+</span></div>
+          <div class="stat__num"><span data-count="23" data-suffix="+">23+</span></div>
           <div class="stat__label">Recenzii pozitive</div>
         </div>
         <div class="stat">
-          <div class="stat__num">5<span>.0</span></div>
+          <div class="stat__num"><span data-count="5" data-decimals="1">5.0</span></div>
           <div class="stat__label">Rating mediu</div>
           <div class="stat__stars" aria-label="5 stele">
             <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18.5 22 12 17.5 5.5 22l2-8.5L2 9h7z"/></svg>
@@ -117,7 +104,7 @@
           </div>
         </div>
         <div class="stat">
-          <div class="stat__num">100<span>%</span></div>
+          <div class="stat__num"><span data-count="100" data-suffix="%">100%</span></div>
           <div class="stat__label">Produse premium</div>
         </div>
       </div>
@@ -132,7 +119,7 @@
   <!-- About -->
   <section class="about" id="despre">
     <div class="container about__grid">
-      <div class="about__visual reveal">
+      <div class="about__visual reveal-scale">
         <div class="about__card about__card--one">
           <div class="about__nail" style="--delay:.0s"></div>
           <div class="about__nail" style="--delay:.1s"></div>
@@ -161,7 +148,7 @@
           durează și care te fac să te simți specială.
         </p>
 
-        <ul class="about__list reveal">
+        <ul class="about__list" data-stagger>
           <li>
             <span class="about__num">01</span>
             <div>
@@ -199,9 +186,9 @@
   <section class="services" id="servicii">
     <div class="container">
       <div class="services__head reveal">
-        <p class="eyebrow">Serviciile mele</p>
+        <p class="eyebrow eyebrow--center">Serviciile mele</p>
         <h2 class="section-title">O colecție gândită <em>cu grijă</em>.</h2>
-        <p class="section-sub">
+        <p class="section-sub" style="margin:16px auto 0">
           De la baza simplă la construcții impecabile și detalii pictate manual —
           alege ritualul potrivit pentru tine.
         </p>
@@ -214,180 +201,100 @@
         <button class="service-tab" data-tab="extra">Design &amp; Extra</button>
       </div>
 
-      <div class="services__grid">
-        <!-- Row 1 -->
+      <div class="services__grid" data-stagger>
         <article class="service" data-cat="oja">
-          <div class="service__top">
-            <span class="service__index">01</span>
-            <span class="service__time">1 h</span>
-          </div>
+          <div class="service__top"><span class="service__index">01</span><span class="service__time">1 h</span></div>
           <h3 class="service__title">Ojă semipermanentă — bază</h3>
           <p class="service__desc">Nuanțe milky &amp; nude pentru un look curat, minimalist, elegant.</p>
           <div class="service__foot">
             <span class="service__price">200 <i>RON</i></span>
-            <a href="https://book.heygoldie.com/alessiajuglan-nailtech" target="_blank" rel="noopener" class="service__book">Rezervă →</a>
+            <a href="programare.html?service=oja-baza" class="service__book">Rezervă <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
           </div>
         </article>
 
         <article class="service service--featured" data-cat="oja">
           <span class="service__badge">Popular</span>
-          <div class="service__top">
-            <span class="service__index">02</span>
-            <span class="service__time">1 h 30 min</span>
-          </div>
+          <div class="service__top"><span class="service__index">02</span><span class="service__time">1 h 30 min</span></div>
           <h3 class="service__title">Ojă semipermanentă — culoare / model</h3>
           <p class="service__desc">Culori vii sau modele delicate — alegerea este a ta, execuția este impecabilă.</p>
           <div class="service__foot">
             <span class="service__price">230 <i>RON</i></span>
-            <a href="https://book.heygoldie.com/alessiajuglan-nailtech" target="_blank" rel="noopener" class="service__book">Rezervă →</a>
+            <a href="programare.html?service=oja-culoare" class="service__book">Rezervă <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
           </div>
         </article>
 
         <article class="service" data-cat="gel">
-          <div class="service__top">
-            <span class="service__index">03</span>
-            <span class="service__time">2 h</span>
-          </div>
+          <div class="service__top"><span class="service__index">03</span><span class="service__time">2 h</span></div>
           <h3 class="service__title">Întreținere gel · mărimea 1–2</h3>
           <p class="service__desc">Refill atent pentru unghii scurte — forma revine perfectă și lucioasă.</p>
           <div class="service__foot">
             <span class="service__price">260 <i>RON</i></span>
-            <a href="https://book.heygoldie.com/alessiajuglan-nailtech" target="_blank" rel="noopener" class="service__book">Rezervă →</a>
+            <a href="programare.html?service=intr-12" class="service__book">Rezervă <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
           </div>
         </article>
 
         <article class="service" data-cat="gel">
-          <div class="service__top">
-            <span class="service__index">04</span>
-            <span class="service__time">2 h 30 min</span>
-          </div>
+          <div class="service__top"><span class="service__index">04</span><span class="service__time">2 h 30 min</span></div>
           <h3 class="service__title">Întreținere gel · mărimea 3–4</h3>
           <p class="service__desc">Refill complet pentru lungimi medii — echilibru între eleganță și durabilitate.</p>
           <div class="service__foot">
             <span class="service__price">300 <i>RON</i></span>
-            <a href="https://book.heygoldie.com/alessiajuglan-nailtech" target="_blank" rel="noopener" class="service__book">Rezervă →</a>
+            <a href="programare.html?service=intr-34" class="service__book">Rezervă <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
           </div>
         </article>
 
         <article class="service" data-cat="gel">
-          <div class="service__top">
-            <span class="service__index">05</span>
-            <span class="service__time">3 h 30 min</span>
-          </div>
+          <div class="service__top"><span class="service__index">05</span><span class="service__time">3 h 30 min</span></div>
           <h3 class="service__title">Întreținere / Construcție · mărimea 5–7</h3>
           <p class="service__desc">Lungimi statement — construcție robustă și design de efect.</p>
           <div class="service__foot">
             <span class="service__price">400 <i>RON</i></span>
-            <a href="https://book.heygoldie.com/alessiajuglan-nailtech" target="_blank" rel="noopener" class="service__book">Rezervă →</a>
-          </div>
-        </article>
-
-        <article class="service" data-cat="gel">
-          <div class="service__top">
-            <span class="service__index">06</span>
-            <span class="service__time">2 h 30 min</span>
-          </div>
-          <h3 class="service__title">Construcție gel · mărimea 1–2</h3>
-          <p class="service__desc">Bază solidă, discretă — perfectă pentru primul tău set.</p>
-          <div class="service__foot">
-            <span class="service__price">310 <i>RON</i></span>
-            <a href="https://book.heygoldie.com/alessiajuglan-nailtech" target="_blank" rel="noopener" class="service__book">Rezervă →</a>
-          </div>
-        </article>
-
-        <article class="service" data-cat="gel">
-          <div class="service__top">
-            <span class="service__index">07</span>
-            <span class="service__time">3 h</span>
-          </div>
-          <h3 class="service__title">Construcție gel · mărimea 3–4</h3>
-          <p class="service__desc">Forma ideală, finisaj cu oglindă — un set versatil pentru orice ocazie.</p>
-          <div class="service__foot">
-            <span class="service__price">350 <i>RON</i></span>
-            <a href="https://book.heygoldie.com/alessiajuglan-nailtech" target="_blank" rel="noopener" class="service__book">Rezervă →</a>
+            <a href="programare.html?service=intr-57" class="service__book">Rezervă <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
           </div>
         </article>
 
         <article class="service service--accent" data-cat="extra">
           <span class="service__badge service__badge--dark">Artistic</span>
-          <div class="service__top">
-            <span class="service__index">08</span>
-            <span class="service__time">1 h</span>
-          </div>
+          <div class="service__top"><span class="service__index">08</span><span class="service__time">1 h</span></div>
           <h3 class="service__title">Design 3D — toate unghiile</h3>
           <p class="service__desc">Texturi, pigmenți și picturi 3D care transformă fiecare unghie într-o piesă unică.</p>
           <div class="service__foot">
             <span class="service__price">100–200 <i>RON</i></span>
-            <a href="https://book.heygoldie.com/alessiajuglan-nailtech" target="_blank" rel="noopener" class="service__book">Rezervă →</a>
+            <a href="programare.html?service=design-3d" class="service__book">Rezervă <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
           </div>
         </article>
+      </div>
 
-        <article class="service" data-cat="extra">
-          <div class="service__top">
-            <span class="service__index">09</span>
-            <span class="service__time">30 min</span>
-          </div>
-          <h3 class="service__title">Model pictat — toate unghiile</h3>
-          <p class="service__desc">Modele pictate manual, pigmenți fini, dantelării și linii elegante.</p>
-          <div class="service__foot">
-            <span class="service__price">100 <i>RON</i></span>
-            <a href="https://book.heygoldie.com/alessiajuglan-nailtech" target="_blank" rel="noopener" class="service__book">Rezervă →</a>
-          </div>
-        </article>
-
-        <article class="service" data-cat="extra">
-          <div class="service__top">
-            <span class="service__index">10</span>
-            <span class="service__time">1 h</span>
-          </div>
-          <h3 class="service__title">French Glass</h3>
-          <p class="service__desc">Finisajul cu efect de sticlă — strălucire subtilă, extrem de rafinată.</p>
-          <div class="service__foot">
-            <span class="service__price">150 <i>RON</i></span>
-            <a href="https://book.heygoldie.com/alessiajuglan-nailtech" target="_blank" rel="noopener" class="service__book">Rezervă →</a>
-          </div>
-        </article>
-
-        <article class="service" data-cat="extra">
-          <div class="service__top">
-            <span class="service__index">11</span>
-            <span class="service__time">45 min</span>
-          </div>
-          <h3 class="service__title">Demontare</h3>
-          <p class="service__desc">Curățare material tehnic, stilizare cuticulă și tratament pentru regenerare.</p>
-          <div class="service__foot">
-            <span class="service__price">80 <i>RON</i></span>
-            <a href="https://book.heygoldie.com/alessiajuglan-nailtech" target="_blank" rel="noopener" class="service__book">Rezervă →</a>
-          </div>
-        </article>
+      <div class="text-center mt-30">
+        <a href="servicii.html" class="btn btn--ghost">Vezi toate serviciile</a>
       </div>
     </div>
   </section>
 
-  <!-- Process / Experience -->
+  <!-- Process -->
   <section class="process">
     <div class="container process__wrap">
-      <p class="eyebrow reveal">Ritualul</p>
+      <p class="eyebrow eyebrow--center reveal">Ritualul</p>
       <h2 class="section-title reveal">Experiența la <em>Alessia Juglan</em>.</h2>
 
       <div class="process__line" aria-hidden="true"></div>
-      <div class="process__steps">
-        <div class="step reveal">
+      <div class="process__steps" data-stagger>
+        <div class="step">
           <span class="step__num">I</span>
           <h4>Consultație</h4>
           <p>Discutăm despre stilul, forma și culoarea care ți se potrivesc.</p>
         </div>
-        <div class="step reveal">
+        <div class="step">
           <span class="step__num">II</span>
           <h4>Pregătire</h4>
           <p>Stilizarea cuticulei și pregătirea plăcii unghiei, cu atenție la detalii.</p>
         </div>
-        <div class="step reveal">
+        <div class="step">
           <span class="step__num">III</span>
           <h4>Creație</h4>
           <p>Aplicarea construcției, a culorii și a designului — totul lucrat manual.</p>
         </div>
-        <div class="step reveal">
+        <div class="step">
           <span class="step__num">IV</span>
           <h4>Finisaj</h4>
           <p>Luciu, ulei pentru cuticulă și recomandări pentru a păstra setul perfect.</p>
@@ -400,43 +307,40 @@
   <section class="gallery" id="galerie">
     <div class="container">
       <div class="gallery__head reveal">
-        <p class="eyebrow">Galerie</p>
+        <p class="eyebrow eyebrow--center">Galerie</p>
         <h2 class="section-title">Lucrări <em>semnate</em> de mine.</h2>
-        <p class="section-sub">Nuanțe, texturi și finisaje realizate pentru cliente care vor mai mult decât „doar o manichiură”.</p>
+        <p class="section-sub" style="margin:16px auto 0">Nuanțe, texturi și finisaje realizate pentru cliente care vor mai mult decât „doar o manichiură".</p>
       </div>
 
-      <div class="gallery__grid">
-        <div class="gallery__item gallery__item--tall reveal" style="--hue:22;">
+      <div class="gallery__grid" data-stagger>
+        <div class="gallery__item gallery__item--tall">
           <div class="gallery__art gallery__art--milky"></div>
           <span class="gallery__label">Milky Base</span>
         </div>
-        <div class="gallery__item reveal" style="--hue:12;">
+        <div class="gallery__item">
           <div class="gallery__art gallery__art--chrome"></div>
           <span class="gallery__label">French Glass</span>
         </div>
-        <div class="gallery__item reveal" style="--hue:340;">
+        <div class="gallery__item">
           <div class="gallery__art gallery__art--rose"></div>
           <span class="gallery__label">Rose Blush</span>
         </div>
-        <div class="gallery__item gallery__item--wide reveal" style="--hue:30;">
+        <div class="gallery__item gallery__item--wide">
           <div class="gallery__art gallery__art--3d"></div>
           <span class="gallery__label">3D Hand Painted</span>
         </div>
-        <div class="gallery__item reveal" style="--hue:0;">
+        <div class="gallery__item">
           <div class="gallery__art gallery__art--red"></div>
           <span class="gallery__label">Classic Red</span>
         </div>
-        <div class="gallery__item gallery__item--tall reveal" style="--hue:20;">
+        <div class="gallery__item gallery__item--tall">
           <div class="gallery__art gallery__art--nude"></div>
           <span class="gallery__label">Nude Glow</span>
         </div>
       </div>
 
       <div class="gallery__cta reveal">
-        <a href="https://www.tiktok.com/@alessiajuglan" target="_blank" rel="noopener" class="btn btn--ghost">
-          Urmărește pe TikTok
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M7 7h10v10"/></svg>
-        </a>
+        <a href="galerie.html" class="btn btn--ghost">Vezi galeria completă</a>
       </div>
     </div>
   </section>
@@ -445,7 +349,7 @@
   <section class="reviews" id="recenzii">
     <div class="container">
       <div class="reviews__head reveal">
-        <p class="eyebrow">Recenzii</p>
+        <p class="eyebrow eyebrow--center">Recenzii</p>
         <h2 class="section-title">Ce spun <em>clientele</em>.</h2>
         <div class="reviews__score">
           <div class="reviews__stars">
@@ -455,183 +359,57 @@
             <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18.5 22 12 17.5 5.5 22l2-8.5L2 9h7z"/></svg>
             <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18.5 22 12 17.5 5.5 22l2-8.5L2 9h7z"/></svg>
           </div>
-          <span>5.0 · <strong>23 recenzii</strong> pe Goldie</span>
+          <span>5.0 · <strong>23 recenzii</strong> de la clientele</span>
         </div>
       </div>
 
-      <div class="reviews__grid">
-        <article class="review reveal">
+      <div class="reviews__grid" data-stagger>
+        <article class="review">
           <div class="review__stars" aria-label="5 stele">★★★★★</div>
-          <p>„Superbe unghiuțele!”</p>
-          <footer>
-            <strong>Dana</strong>
-            <span>12 Ian 2026</span>
-          </footer>
+          <p>„Superbe unghiuțele!"</p>
+          <footer><strong>Dana</strong><span>12 Ian 2026</span></footer>
         </article>
-        <article class="review reveal">
+        <article class="review">
           <div class="review__stars" aria-label="5 stele">★★★★★</div>
-          <p>„O experiență super relaxantă, Alessia are mâna ei de artist. Rezultatul a întrecut așteptările.”</p>
-          <footer>
-            <strong>Ioana</strong>
-            <span>clientă fidelă</span>
-          </footer>
+          <p>„O experiență super relaxantă, Alessia are mâna ei de artist. Rezultatul a întrecut așteptările."</p>
+          <footer><strong>Ioana</strong><span>clientă fidelă</span></footer>
         </article>
-        <article class="review reveal">
+        <article class="review">
           <div class="review__stars" aria-label="5 stele">★★★★★</div>
-          <p>„Atenție la detalii, un salon curat și o atmosferă plăcută. Revin cu drag de fiecare dată.”</p>
-          <footer>
-            <strong>Maria</strong>
-            <span>clientă fidelă</span>
-          </footer>
+          <p>„Atenție la detalii, un salon curat și o atmosferă plăcută. Revin cu drag de fiecare dată."</p>
+          <footer><strong>Maria</strong><span>clientă fidelă</span></footer>
         </article>
       </div>
 
-      <a href="https://book.heygoldie.com/alessiajuglan-nailtech" target="_blank" rel="noopener" class="reviews__all reveal">
-        Vezi toate recenziile pe Goldie →
-      </a>
+      <a href="recenzii.html" class="reviews__all reveal">Vezi toate recenziile →</a>
     </div>
   </section>
 
-  <!-- Policies -->
-  <section class="policies">
-    <div class="container policies__wrap">
-      <div class="policies__head reveal">
-        <p class="eyebrow">Regulament</p>
-        <h2 class="section-title">Pentru o experiență <em>plăcută</em> pentru toată lumea.</h2>
-        <p class="section-sub">
-          Am gândit câteva reguli simple care ne ajută să menținem un program echilibrat și
-          să ofer fiecărei cliente timpul și atenția pe care le merită.
-        </p>
-      </div>
-
-      <div class="policies__grid">
-        <div class="policy reveal">
-          <span class="policy__ico">⏱</span>
-          <h4>Punctualitate</h4>
-          <p>Întârzierile de peste 15 minute duc la anularea programării, pentru a respecta celelalte cliente.</p>
-        </div>
-        <div class="policy reveal">
-          <span class="policy__ico">↻</span>
-          <h4>Reprogramări</h4>
-          <p>Se pot face cu cel puțin 48 de ore înainte, în limita locurilor disponibile.</p>
-        </div>
-        <div class="policy reveal">
-          <span class="policy__ico">✦</span>
-          <h4>Anulări</h4>
-          <p>Te rog anulează din aplicație cu minim 24h înainte. Altfel, 50% din costul serviciului se achită la următoarea programare.</p>
-        </div>
-        <div class="policy reveal">
-          <span class="policy__ico">✉</span>
-          <h4>Confirmare</h4>
-          <p>Vei primi un mesaj de confirmare cu o săptămână înainte. Neconfirmarea în 48h duce la anularea programării.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="contact" id="contact">
-    <div class="container contact__grid">
-      <div class="contact__left reveal">
-        <p class="eyebrow">Contact</p>
-        <h2 class="section-title">Hai să creăm <em>setul tău</em> perfect.</h2>
-        <p class="contact__lead">
-          Rezervă direct online sau contactează-mă pentru orice detaliu —
-          răspund cât de repede pot.
-        </p>
-
-        <div class="contact__items">
-          <a href="tel:0757051148" class="contact__item">
-            <span class="contact__ico">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.6 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
-            </span>
-            <div>
-              <span class="contact__label">Telefon</span>
-              <strong>0757 051 148</strong>
-            </div>
-          </a>
-
-          <a href="mailto:alessiaj_74@yahoo.com" class="contact__item">
-            <span class="contact__ico">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
-            </span>
-            <div>
-              <span class="contact__label">Email</span>
-              <strong>alessiaj_74@yahoo.com</strong>
-            </div>
-          </a>
-
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="contact__item">
-            <span class="contact__ico">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            </span>
-            <div>
-              <span class="contact__label">Instagram</span>
-              <strong>@alessiajuglan</strong>
-            </div>
-          </a>
-
-          <a href="https://www.tiktok.com/@alessiajuglan" target="_blank" rel="noopener" class="contact__item">
-            <span class="contact__ico">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M16.5 3a5.5 5.5 0 0 0 4.5 4.4v3a8.4 8.4 0 0 1-4.5-1.3v6.2a6.5 6.5 0 1 1-6.5-6.5c.3 0 .6 0 .9.1v3.1a3.5 3.5 0 1 0 2.6 3.3V3h3z"/></svg>
-            </span>
-            <div>
-              <span class="contact__label">TikTok</span>
-              <strong>@alessiajuglan</strong>
-            </div>
-          </a>
-        </div>
-
-        <a href="https://book.heygoldie.com/alessiajuglan-nailtech" target="_blank" rel="noopener" class="btn btn--gold btn--lg contact__cta">
+  <!-- CTA band -->
+  <section class="cta-band">
+    <div class="container">
+      <p class="eyebrow eyebrow--center reveal">Fă primul pas</p>
+      <h2 class="cta-band__title reveal">
+        Hai să creăm <em>împreună</em><br/>setul tău perfect.
+      </h2>
+      <p class="cta-band__sub reveal">
+        Rezervă online în câteva secunde — alegi serviciul, data și ora.
+        Confirmarea ajunge direct pe telefon.
+      </p>
+      <div class="reveal">
+        <a href="programare.html" class="btn btn--gold btn--lg" data-magnetic>
           Programează-te acum
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
       </div>
-
-      <aside class="contact__hours reveal">
-        <header>
-          <h3>Program</h3>
-          <span class="contact__open" data-open>Verificăm orarul…</span>
-        </header>
-        <ul>
-          <li data-day="1"><span>Luni</span><span>12:00 – 20:00</span></li>
-          <li data-day="2"><span>Marți</span><span>10:00 – 18:00</span></li>
-          <li data-day="3"><span>Miercuri</span><span>12:00 – 20:00</span></li>
-          <li data-day="4"><span>Joi</span><span>10:00 – 18:00</span></li>
-          <li data-day="5"><span>Vineri</span><span>10:00 – 18:00</span></li>
-          <li data-day="6" class="closed"><span>Sâmbătă</span><span>Închis</span></li>
-          <li data-day="0" class="closed"><span>Duminică</span><span>Închis</span></li>
-        </ul>
-
-        <div class="contact__note">
-          <strong>Locație:</strong>
-          Iași, România — adresa completă se comunică la confirmarea programării.
-        </div>
-      </aside>
     </div>
+    <div class="cta-band__deco">Alessia Juglan</div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__brand">
-        <span class="footer__mark">A<span class="amp">·</span>J</span>
-        <p>Alessia Juglan Nail Artist — Manichiură premium în Iași.</p>
-      </div>
-      <div class="footer__links">
-        <a href="#despre">Despre</a>
-        <a href="#servicii">Servicii</a>
-        <a href="#galerie">Galerie</a>
-        <a href="#recenzii">Recenzii</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="footer__meta">
-        <span>© <span id="year"></span> Alessia Juglan. Toate drepturile rezervate.</span>
-        <span>Programări prin <a href="https://book.heygoldie.com/alessiajuglan-nailtech" target="_blank" rel="noopener">Goldie</a></span>
-      </div>
-    </div>
-  </footer>
+  <!-- Footer (injected) -->
+  <div id="site-footer"></div>
 
+  <script src="services-data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicii — Alessia Juglan Nail Artist</title>
+  <meta name="description" content="Toate serviciile oferite de Alessia Juglan: ojă semipermanentă, construcție gel, design 3D, French Glass, demontare." />
+  <meta name="theme-color" content="#f5ece3" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Italiana&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-intro"></div>
+  <div class="scroll-progress"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div id="site-header"></div>
+
+  <section class="page-head">
+    <div class="hero__grain" aria-hidden="true"></div>
+    <div class="hero__orbs" aria-hidden="true">
+      <span class="orb orb--1"></span>
+      <span class="orb orb--2"></span>
+    </div>
+    <div class="container page-head__inner">
+      <p class="eyebrow eyebrow--center" style="animation:riseIn 0.9s var(--ease) both">Servicii</p>
+      <h1 class="page-head__title">
+        Colecția <em>completă</em>.
+      </h1>
+      <p class="page-head__sub" style="animation:riseIn 0.9s 0.4s var(--ease) both">
+        11 servicii distincte — de la bază simplă la design artistic. Prețuri transparente, durate reale, rezervare online.
+      </p>
+      <div class="page-head__crumbs" style="animation:riseIn 0.9s 0.6s var(--ease) both">
+        <a href="index.html">Acasă</a> <span>/</span> <span style="color:var(--charcoal)">Servicii</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" style="padding-top:80px">
+    <div class="container">
+      <div class="services__tabs reveal">
+        <button class="service-tab is-active" data-tab="all">Toate</button>
+        <button class="service-tab" data-tab="oja">Ojă semipermanentă</button>
+        <button class="service-tab" data-tab="gel">Gel · Construcție</button>
+        <button class="service-tab" data-tab="extra">Design &amp; Extra</button>
+      </div>
+
+      <div class="services__grid" data-stagger id="services-grid"></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <div class="faq__grid">
+        <div class="reveal">
+          <p class="eyebrow">Întrebări frecvente</p>
+          <h2 class="section-title">Tot ce vrei <em>să știi</em>.</h2>
+          <p class="section-sub" style="margin-top:12px">
+            Dacă nu găsești răspunsul aici, scrie-mi direct pe WhatsApp.
+            Îți răspund cât de repede pot.
+          </p>
+          <a href="contact.html" class="btn btn--ghost" style="margin-top:24px">Contactează-mă</a>
+        </div>
+
+        <div class="faq__list" data-stagger>
+          <div class="faq__item">
+            <button class="faq__q">Cât durează o programare?</button>
+            <div class="faq__a">
+              <p>Durata depinde de serviciu: ojă semipermanentă 1–1h30min, întreținere gel 2–3h30min, construcție 2h30min–3h. Fiecare serviciu are durata estimată pe pagina de programare.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q">Cât rezistă o manichiură?</button>
+            <div class="faq__a">
+              <p>Oja semipermanentă rezistă 3–4 săptămâni, iar construcția gel 4 săptămâni înainte de refill. Îți dau sfaturi personalizate pentru a prelungi rezistența setului.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q">Ce produse folosești?</button>
+            <div class="faq__a">
+              <p>Folosesc exclusiv branduri premium, verificate în timp, cu pigmenți de calitate și formule blânde pentru placa unghiei. Toate instrumentele sunt sterilizate.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q">Pot veni cu un model ales de pe Instagram?</button>
+            <div class="faq__a">
+              <p>Absolut. Îmi poți trimite inspirația înainte, ca să pregătesc materialele. Recreez modelele cu mâna, adaptate la forma ta.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q">Cum se face plata?</button>
+            <div class="faq__a">
+              <p>Plata se face la finalul ședinței — cash, card sau transfer. Pentru anumite programări cu durată mare, pot cere un avans care se comunică la confirmare.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q">Cum anulez sau reprogramez?</button>
+            <div class="faq__a">
+              <p>Reprogramările se fac cu minim 48h înainte, anulările cu minim 24h. Detalii complete găsești în regulamentul de la finalul paginii.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Policies -->
+  <section class="policies" style="padding-top:0">
+    <div class="container policies__wrap">
+      <div class="policies__head reveal">
+        <p class="eyebrow eyebrow--center">Regulament</p>
+        <h2 class="section-title">Pentru o experiență <em>plăcută</em> pentru toată lumea.</h2>
+        <p class="section-sub" style="margin:16px auto 0">
+          Câteva reguli simple care ne ajută să menținem un program echilibrat și să ofer fiecărei cliente timpul și atenția pe care le merită.
+        </p>
+      </div>
+
+      <div class="policies__grid" data-stagger>
+        <div class="policy">
+          <span class="policy__ico">⏱</span>
+          <h4>Punctualitate</h4>
+          <p>Întârzierile de peste 15 minute duc la anularea programării, pentru a respecta celelalte cliente.</p>
+        </div>
+        <div class="policy">
+          <span class="policy__ico">↻</span>
+          <h4>Reprogramări</h4>
+          <p>Se pot face cu cel puțin 48 de ore înainte, în limita locurilor disponibile.</p>
+        </div>
+        <div class="policy">
+          <span class="policy__ico">✦</span>
+          <h4>Anulări</h4>
+          <p>Anulează cu minim 24h înainte. Altfel, 50% din costul serviciului se achită la următoarea programare.</p>
+        </div>
+        <div class="policy">
+          <span class="policy__ico">✉</span>
+          <h4>Confirmare</h4>
+          <p>Vei primi un mesaj de confirmare cu o săptămână înainte. Neconfirmarea în 48h duce la anularea programării.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="container">
+      <p class="eyebrow eyebrow--center reveal">Pregătită?</p>
+      <h2 class="cta-band__title reveal">
+        Alege serviciul și <em>programează-te</em>.
+      </h2>
+      <div class="reveal">
+        <a href="programare.html" class="btn btn--gold btn--lg" data-magnetic>Programează-te</a>
+      </div>
+    </div>
+    <div class="cta-band__deco">Servicii</div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="services-data.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Render all services dynamically from shared data
+    (function() {
+      const grid = document.getElementById('services-grid');
+      if (!grid || !window.AJ || !window.AJ.services) return;
+      const html = window.AJ.services.map((s, i) => {
+        const cls = ['service'];
+        if (s.featured) cls.push('service--featured');
+        if (s.accent) cls.push('service--accent');
+        const badge = s.badge ? `<span class="service__badge${s.badgeDark ? ' service__badge--dark' : ''}">${s.badge}</span>` : '';
+        return `
+          <article class="${cls.join(' ')}" data-cat="${s.category}">
+            ${badge}
+            <div class="service__top">
+              <span class="service__index">${s.index}</span>
+              <span class="service__time">${s.durationLabel}</span>
+            </div>
+            <h3 class="service__title">${s.title}</h3>
+            <p class="service__desc">${s.desc}${s.note ? `<br><em style="color:var(--gold-3);font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-style:normal">${s.note}</em>` : ''}</p>
+            <div class="service__foot">
+              <span class="service__price">${s.priceLabel} <i>RON</i></span>
+              <a href="programare.html?service=${s.id}" class="service__book">Rezervă <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            </div>
+          </article>`;
+      }).join('');
+      grid.innerHTML = html;
+    })();
+  </script>
+</body>
+</html>
