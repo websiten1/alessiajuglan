@@ -11,7 +11,7 @@
   const PHONE_INTL = window.AJ?.PHONE_INTL || '40757051148';
 
   const MONTHS = ['Ianuarie','Februarie','Martie','Aprilie','Mai','Iunie','Iulie','August','Septembrie','Octombrie','Noiembrie','Decembrie'];
-  const DAYS_RO = ['Duminică','Luni','Marți','Miercuri','Joi','Vineri','Sâmbătă'];
+  const DAYS_RO = ['Duminică','Luni','Marti','Miercuri','Joi','Vineri','Sâmbătă'];
 
   const state = {
     step: 1,
@@ -211,11 +211,11 @@
       <div class="review-row"><span>Durată estimată</span><strong>${state.service?.durationLabel || '—'}</strong></div>
       <div class="review-row"><span>Data</span><strong>${formatDate(state.date)}</strong></div>
       <div class="review-row"><span>Ora</span><strong>${state.time || '—'}</strong></div>
-      <div class="review-row"><span>Preț</span><strong>${state.service?.priceLabel || '—'} <em>RON</em></strong></div>
+      <div class="review-row"><span>Pret</span><strong>${state.service?.priceLabel || '—'} <em>RON</em></strong></div>
       <div class="review-row" style="margin-top:10px;padding-top:14px;border-top:1px solid var(--line)"><span>Nume</span><strong>${state.name || '—'}</strong></div>
       <div class="review-row"><span>Telefon</span><strong>${state.phone || '—'}</strong></div>
       ${state.email ? `<div class="review-row"><span>Email</span><strong>${state.email}</strong></div>` : ''}
-      ${state.notes ? `<div class="review-row"><span>Mențiuni</span><strong style="text-align:right;max-width:60%">${state.notes}</strong></div>` : ''}
+      ${state.notes ? `<div class="review-row"><span>Mentiuni</span><strong style="text-align:right;max-width:60%">${state.notes}</strong></div>` : ''}
     `;
   }
 
@@ -331,7 +331,7 @@
       `*Durată estimată:* ${state.service?.durationLabel || '—'}`,
       `*Data:* ${formatDate(state.date)}`,
       `*Ora:* ${state.time}`,
-      `*Preț estimat:* ${state.service?.priceLabel || '—'} RON`,
+      `*Pret estimat:* ${state.service?.priceLabel || '—'} RON`,
       '',
       `*Nume:* ${state.name}`,
       `*Telefon:* ${state.phone}`,
@@ -339,11 +339,11 @@
     if (state.email) lines.push(`*Email:* ${state.email}`);
     if (state.notes) {
       lines.push('');
-      lines.push('*Mențiuni:*');
+      lines.push('*Mentiuni:*');
       lines.push(state.notes);
     }
     lines.push('');
-    lines.push('Confirm că am citit regulamentul și aștept confirmarea din partea ta. Mulțumesc!');
+    lines.push('Confirm că am citit regulamentul și aștept confirmarea din partea ta. Multumesc!');
 
     const msg = encodeURIComponent(lines.join('\n'));
     const url = `https://wa.me/${PHONE_INTL}?text=${msg}`;

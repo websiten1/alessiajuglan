@@ -15,8 +15,6 @@
 <body>
   <div class="page-intro"></div>
   <div class="scroll-progress"></div>
-  <div class="cursor-glow" aria-hidden="true"></div>
-  <div class="cursor-dot" aria-hidden="true"></div>
   <div id="site-header"></div>
 
   <section class="page-head">
@@ -31,7 +29,7 @@
         Vocea <em>clientelor</em>.
       </h1>
       <p class="page-head__sub" style="animation:riseIn 0.9s 0.4s var(--ease) both">
-        Sunt recunoscătoare pentru fiecare clientă care mi-a împărtășit experiența.
+        Sunt recunoscătoare pentru fiecare clientă care mi-a împărtășit experienta.
         Mai jos găsești părerile lor reale.
       </p>
       <div class="reviews__score" style="margin-top:28px;animation:riseIn 0.9s 0.6s var(--ease) both">
@@ -52,64 +50,53 @@
 
   <section class="reviews" style="background:var(--cream)">
     <div class="container">
-      <div class="reviews__grid" data-stagger>
-        <article class="review">
-          <div class="review__stars" aria-label="5 stele">★★★★★</div>
-          <p>„Superbe unghiuțele!"</p>
-          <footer><strong>Dana</strong><span>12 Ian 2026</span></footer>
-        </article>
-        <article class="review">
-          <div class="review__stars">★★★★★</div>
-          <p>„O experiență super relaxantă, Alessia are mâna ei de artist. Rezultatul a întrecut așteptările."</p>
-          <footer><strong>Ioana</strong><span>clientă fidelă</span></footer>
-        </article>
-        <article class="review">
-          <div class="review__stars">★★★★★</div>
-          <p>„Atenție la detalii, un salon curat și o atmosferă plăcută. Revin cu drag de fiecare dată."</p>
-          <footer><strong>Maria</strong><span>clientă fidelă</span></footer>
-        </article>
-        <article class="review">
-          <div class="review__stars">★★★★★</div>
-          <p>„Am mers pentru construcție gel și nu m-am mai oprit. Alessia este o profesionistă desăvârșită."</p>
-          <footer><strong>Andreea</strong><span>clientă fidelă</span></footer>
-        </article>
-        <article class="review">
-          <div class="review__stars">★★★★★</div>
-          <p>„Modelul pictat manual a fost exact cum mi-am dorit. Atenția la detalii e impresionantă."</p>
-          <footer><strong>Elena</strong><span>clientă fidelă</span></footer>
-        </article>
-        <article class="review">
-          <div class="review__stars">★★★★★</div>
-          <p>„Recomand cu cea mai mare încredere. Forma unghiei e perfectă, luciul se menține săptămâni întregi."</p>
-          <footer><strong>Cristina</strong><span>clientă fidelă</span></footer>
-        </article>
-        <article class="review">
-          <div class="review__stars">★★★★★</div>
-          <p>„M-a primit punctual, mi-a explicat tot procesul. Un salon în care te simți îngrijită cu adevărat."</p>
-          <footer><strong>Raluca</strong><span>clientă fidelă</span></footer>
-        </article>
-        <article class="review">
-          <div class="review__stars">★★★★★</div>
-          <p>„Designul 3D este exact ca în fotografii — și în realitate e încă mai frumos. Absolut delicios."</p>
-          <footer><strong>Ana</strong><span>clientă fidelă</span></footer>
-        </article>
-        <article class="review">
-          <div class="review__stars">★★★★★</div>
-          <p>„French Glass lucrat de Alessia e altceva. Luciul e ca de oglindă, nu am mai văzut așa ceva."</p>
-          <footer><strong>Diana</strong><span>clientă fidelă</span></footer>
-        </article>
-      </div>
+      <div class="reviews__grid" data-stagger id="reviews-grid"></div>
+      <script>
+        (function () {
+          const STAR = '<svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18.5 22 12 17.5 5.5 22l2-8.5L2 9h7z"/></svg>';
+          const CAL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>';
+          const reviews = [
+            { name: 'Dana', initial: 'D', avatar: 'gold',     date: '12 Ian 2026', service: 'Oja semipermanenta',  text: 'Superbe unghiutele! Culoarea nude pe care mi-a ales-o Alessia a fost fix ce aveam nevoie. Rezista impecabil de trei saptamani deja.' },
+            { name: 'Ioana',    initial: 'I', avatar: 'rose',     date: '8 Ian 2026',  service: 'French Glass',       text: 'O experienta super relaxanta, Alessia are mana ei de artist. Rezultatul a intrecut asteptarile — luciul e ca de oglinda.' },
+            { name: 'Maria',    initial: 'M', avatar: 'accent',   date: '5 Ian 2026',  service: 'Constructie gel',    text: 'Atentie la detalii, un salon curat si o atmosfera placuta. Revin cu drag de fiecare data, m-am atasat ca de o prietena.' },
+            { name: 'Andreea',  initial: 'A', avatar: 'charcoal', date: '28 Dec 2025', service: 'Constructie + design', text: 'Am mers pentru constructie gel si nu m-am mai oprit. Alessia este o profesionista desavarsita, recomand cu toata inima.' },
+            { name: 'Elena',    initial: 'E', avatar: 'blush',    date: '19 Dec 2025', service: 'Design pictat manual', text: 'Modelul pictat manual a fost exact cum mi-am dorit. Atentia la detalii e impresionanta, fiecare unghie e ca o mica bijuterie.' },
+            { name: 'Cristina', initial: 'C', avatar: 'gold',     date: '11 Dec 2025', service: 'Oja + french',       text: 'Recomand cu cea mai mare incredere. Forma unghiei e perfecta, luciul se mentine saptamani intregi fara nicio fisura.' },
+            { name: 'Raluca',   initial: 'R', avatar: 'accent',   date: '2 Dec 2025',  service: 'Oja semipermanenta', text: 'M-a primit punctual, mi-a explicat tot procesul. Un salon in care te simti ingrijita cu adevarat, de la capat la coada.' },
+            { name: 'Ana',      initial: 'A', avatar: 'rose',     date: '24 Noi 2025', service: 'Design 3D',          text: 'Designul 3D este exact ca in fotografii — si in realitate e inca mai frumos. Absolut delicios, m-am indragostit de unghiile mele.' },
+            { name: 'Diana',    initial: 'D', avatar: 'charcoal', date: '15 Noi 2025', service: 'French Glass',       text: 'French Glass lucrat de Alessia e altceva. Luciul e ca de oglinda, nu am mai vazut asa ceva nicaieri in Iasi.' },
+          ];
+          const grid = document.getElementById('reviews-grid');
+          grid.innerHTML = reviews.map(r => `
+            <article class="review">
+              <div class="review__head">
+                <span class="review__avatar review__avatar--${r.avatar}">${r.initial}</span>
+                <div class="review__person">
+                  <strong>${r.name}</strong>
+                  <span>Clienta verificata</span>
+                </div>
+                <div class="review__stars" aria-label="5 stele">${STAR.repeat(5)}</div>
+              </div>
+              <p>${r.text}</p>
+              <div class="review__meta">
+                <time>${CAL} ${r.date}</time>
+                <span class="review__service">${r.service}</span>
+              </div>
+            </article>
+          `).join('');
+        })();
+      </script>
     </div>
   </section>
 
   <!-- Testimonial feature -->
   <section class="process">
     <div class="container process__wrap" style="max-width:900px;margin:0 auto;">
-      <p class="eyebrow eyebrow--center reveal">Mulțumesc!</p>
+      <p class="eyebrow eyebrow--center reveal">Multumesc!</p>
       <h2 class="section-title reveal">Fiecare recenzie este <em>un motiv</em> în plus.</h2>
       <p style="color:rgba(245,236,227,0.75);font-size:17px;line-height:1.75;margin-top:24px;max-width:600px;margin-left:auto;margin-right:auto" class="reveal">
         Fiecare programare este pentru mine o bucurie, iar cuvintele voastre sunt
-        motorul care mă motivează să fiu mereu mai bună. Vă mulțumesc pentru
+        motorul care mă motivează să fiu mereu mai bună. Vă multumesc pentru
         încrederea acordată.
       </p>
       <div class="reveal" style="margin-top:40px">
@@ -134,6 +121,7 @@
 
   <div id="site-footer"></div>
   <script src="services-data.js"></script>
+  <script src="nail-art.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

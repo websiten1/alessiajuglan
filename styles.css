@@ -20,6 +20,12 @@
   --line: rgba(26, 21, 18, 0.12);
   --line-light: rgba(26, 21, 18, 0.06);
 
+  /* Turquoise accent color (used for evidence/highlights) */
+  --accent: #2a9d96;
+  --accent-2: #4ebfb8;
+  --accent-3: #16726c;
+  --accent-soft: rgba(42, 157, 150, 0.1);
+
   --serif: "Cormorant Garamond", "Times New Roman", serif;
   --display: "Italiana", "Cormorant Garamond", serif;
   --sans: "Inter", system-ui, -apple-system, sans-serif;
@@ -138,49 +144,8 @@ input, textarea, select { font-family: inherit; color: inherit; }
   box-shadow: 0 0 8px rgba(184, 152, 104, 0.5);
 }
 
-/* ============================================
-   Cursor glow + dot
-   ============================================ */
-.cursor-glow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 420px;
-  height: 420px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(215, 164, 140, 0.18) 0%, rgba(215, 164, 140, 0) 65%);
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  mix-blend-mode: multiply;
-}
-.cursor-dot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--gold);
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  transition: width 0.3s var(--ease), height 0.3s var(--ease), opacity 0.3s;
-  mix-blend-mode: difference;
-  opacity: 0;
-}
-@media (hover: hover) {
-  .cursor-dot { opacity: 1; }
-}
-.cursor-dot.is-hover {
-  width: 40px;
-  height: 40px;
-  background: var(--gold-2);
-  opacity: 0.4;
-}
-@media (hover: none) {
-  .cursor-glow, .cursor-dot { display: none; }
-}
+/* (custom cursor removed) */
+.cursor-glow, .cursor-dot { display: none !important; }
 
 /* ============================================
    Reusable typography
@@ -1657,9 +1622,24 @@ input, textarea, select { font-family: inherit; color: inherit; }
   border: 1px solid rgba(212, 183, 131, 0.3);
 }
 .contact__open.is-open {
-  background: rgba(130, 180, 120, 0.12);
-  color: #a8d49a;
-  border-color: rgba(168, 212, 154, 0.35);
+  background: rgba(78, 191, 184, 0.15);
+  color: var(--accent-2);
+  border-color: rgba(78, 191, 184, 0.4);
+}
+.contact__open.is-open::before {
+  content: "";
+  display: inline-block;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--accent-2);
+  margin-right: 8px;
+  vertical-align: middle;
+  box-shadow: 0 0 0 3px rgba(78, 191, 184, 0.3);
+  animation: pulseAccent 2s infinite;
+}
+@keyframes pulseAccent {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(78, 191, 184, 0.3); }
+  50% { box-shadow: 0 0 0 6px rgba(78, 191, 184, 0); }
 }
 .contact__open.is-closed {
   background: rgba(200, 100, 100, 0.12);
@@ -1865,18 +1845,19 @@ input, textarea, select { font-family: inherit; color: inherit; }
   transition: all 0.4s var(--ease);
 }
 .stepper__item.is-done .stepper__circle {
-  background: var(--gold);
+  background: var(--accent);
   color: var(--ivory);
-  border-color: var(--gold);
+  border-color: var(--accent);
 }
 .stepper__item.is-active {
-  color: var(--charcoal);
+  color: var(--accent-3);
 }
 .stepper__item.is-active .stepper__circle {
-  background: var(--charcoal);
+  background: var(--accent);
   color: var(--ivory);
-  border-color: var(--charcoal);
-  transform: scale(1.08);
+  border-color: var(--accent);
+  transform: scale(1.1);
+  box-shadow: 0 0 0 5px var(--accent-soft), 0 8px 18px -8px var(--accent);
 }
 .stepper__sep {
   width: 36px;
@@ -1938,9 +1919,9 @@ input, textarea, select { font-family: inherit; color: inherit; }
   background: linear-gradient(135deg, var(--ivory) 0%, rgba(212, 183, 131, 0.06) 100%);
 }
 .book-service.is-selected {
-  border-color: var(--gold);
-  background: linear-gradient(135deg, var(--ivory) 0%, rgba(212, 183, 131, 0.12) 100%);
-  box-shadow: 0 10px 30px -15px rgba(184, 152, 104, 0.4);
+  border-color: var(--accent);
+  background: linear-gradient(135deg, var(--ivory) 0%, rgba(78, 191, 184, 0.08) 100%);
+  box-shadow: 0 10px 30px -15px var(--accent);
 }
 .book-service__radio {
   width: 22px;
@@ -1952,8 +1933,8 @@ input, textarea, select { font-family: inherit; color: inherit; }
   transition: all 0.3s var(--ease);
 }
 .book-service.is-selected .book-service__radio {
-  border-color: var(--gold);
-  background: var(--gold);
+  border-color: var(--accent);
+  background: var(--accent);
 }
 .book-service.is-selected .book-service__radio::after {
   content: "";
@@ -2075,15 +2056,16 @@ input, textarea, select { font-family: inherit; color: inherit; }
   text-decoration: line-through;
 }
 .calendar__cell.is-today {
-  border-color: var(--gold);
-  color: var(--gold-3);
+  border-color: var(--accent);
+  color: var(--accent-3);
   font-weight: 500;
 }
 .calendar__cell.is-selected {
-  background: var(--charcoal);
+  background: var(--accent);
   color: var(--ivory);
   font-weight: 500;
-  transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px -8px var(--accent);
 }
 
 /* Step 3: time slots */
@@ -2110,11 +2092,11 @@ input, textarea, select { font-family: inherit; color: inherit; }
   transform: translateY(-2px);
 }
 .time-slot.is-selected {
-  background: var(--charcoal);
+  background: var(--accent);
   color: var(--ivory);
-  border-color: var(--charcoal);
+  border-color: var(--accent);
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 24px -10px var(--accent);
 }
 .time-slot.is-disabled {
   background: var(--cream-2);
@@ -2644,3 +2626,402 @@ input, textarea, select { font-family: inherit; color: inherit; }
 .text-center { text-align: center; }
 .mb-0 { margin-bottom: 0 !important; }
 .mt-30 { margin-top: 30px; }
+
+/* ============================================
+   v3 — accent color, redesign reviews,
+   centered icons, real nail SVG art
+   ============================================ */
+
+/* --- Active gallery / service tab uses accent --- */
+.service-tab.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--ivory);
+  box-shadow: 0 8px 22px -10px var(--accent);
+}
+
+/* --- Hours today highlight --- */
+.contact__hours li.today,
+.contact-aside .hours-list li.today {
+  color: var(--accent-2) !important;
+  font-weight: 500;
+  position: relative;
+}
+.contact__hours li.today::before,
+.contact-aside .hours-list li.today::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px; height: 18px;
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+/* --- Centered icons for policy & contact-card circles --- */
+.policy__ico,
+.contact-card__ico,
+.policies .policy__ico {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center;
+  line-height: 1;
+}
+.policy__ico {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--accent-soft) 0%, transparent 100%);
+  border-color: rgba(78, 191, 184, 0.4);
+  color: var(--accent);
+  font-size: 22px;
+  font-family: var(--display);
+}
+.policy:hover .policy__ico {
+  background: var(--accent);
+  color: var(--ivory);
+  border-color: var(--accent);
+  transform: rotate(-8deg) scale(1.05);
+  transition: all 0.4s var(--ease);
+}
+.contact-card__ico {
+  width: 58px;
+  height: 58px;
+  border: 1px solid rgba(78, 191, 184, 0.3);
+  background: linear-gradient(135deg, rgba(78, 191, 184, 0.12), rgba(78, 191, 184, 0.04));
+  color: var(--accent);
+}
+.contact-card:hover .contact-card__ico {
+  background: var(--accent);
+  color: var(--ivory);
+  border-color: var(--accent);
+  transform: scale(1.08);
+}
+.contact-card__ico svg { display: block; }
+
+/* --- Luxury Google-style review cards --- */
+.review {
+  padding: 32px 30px 28px;
+}
+.review::before {
+  display: none; /* remove old quote mark */
+}
+
+.review__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.review__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--display);
+  font-size: 20px;
+  color: var(--ivory);
+  flex-shrink: 0;
+  position: relative;
+  box-shadow: 0 6px 16px -8px rgba(26, 21, 18, 0.25);
+}
+.review__avatar--gold { background: linear-gradient(135deg, var(--gold-2), var(--gold), var(--gold-3)); }
+.review__avatar--rose { background: linear-gradient(135deg, #e9c8b8, var(--rose), #b88870); }
+.review__avatar--accent { background: linear-gradient(135deg, var(--accent-2), var(--accent), var(--accent-3)); }
+.review__avatar--charcoal { background: linear-gradient(135deg, #4a3a30, var(--charcoal)); color: var(--gold-2); }
+.review__avatar--blush { background: linear-gradient(135deg, #f5d8c8, #e0a890, #b07060); }
+
+.review__avatar::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--ivory);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
+  background-size: 11px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.review__person { flex: 1; min-width: 0; }
+.review__person strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 17px;
+  color: var(--charcoal);
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+.review__person span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-3);
+  font-weight: 500;
+}
+.review__person span::before {
+  content: "";
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.review__stars {
+  display: inline-flex;
+  gap: 3px;
+  color: var(--gold);
+  margin-bottom: 0;
+  font-size: 0;
+}
+.review__stars svg {
+  width: 15px;
+  height: 15px;
+  fill: var(--gold);
+}
+.review p {
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ink);
+  font-style: italic;
+  margin-bottom: 18px;
+  position: relative;
+  padding-left: 18px;
+}
+.review p::before {
+  content: "\201C";
+  position: absolute;
+  left: -2px;
+  top: -10px;
+  font-family: var(--display);
+  font-size: 50px;
+  color: var(--accent);
+  line-height: 1;
+  opacity: 0.55;
+}
+.review__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-top: 14px;
+  border-top: 1px dashed var(--line);
+}
+.review__meta time {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.review__meta time svg {
+  width: 12px; height: 12px;
+  color: var(--gold);
+}
+.review__service {
+  color: var(--accent-3);
+  font-weight: 500;
+}
+
+/* Hover */
+.review:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 30px 50px -25px rgba(42, 157, 150, 0.25);
+}
+
+/* --- Reviews score badge — accent --- */
+.reviews__score {
+  background: linear-gradient(135deg, var(--ivory), rgba(78, 191, 184, 0.05));
+  border-color: rgba(78, 191, 184, 0.25);
+}
+.reviews__score strong { color: var(--accent-3); }
+
+/* ============================================
+   Real nail art SVG illustrations
+   ============================================ */
+
+.gallery__art {
+  background: linear-gradient(180deg, #fdf2e8 0%, #f0d3c0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gallery__art::before {
+  content: none; /* reset */
+}
+.gallery__art--milky,
+.gallery__art--chrome,
+.gallery__art--rose,
+.gallery__art--3d,
+.gallery__art--red,
+.gallery__art--nude,
+.gallery__art--burgundy,
+.gallery__art--black,
+.gallery__art--french,
+.gallery__art--marble,
+.gallery__art--magenta {
+  background: linear-gradient(180deg, #fdf2e8 0%, #efd5c2 100%);
+}
+.gallery__art--chrome,
+.gallery__art--3d,
+.gallery__art--black,
+.gallery__art--burgundy {
+  background: linear-gradient(180deg, #251c18 0%, #1a1310 100%);
+}
+
+/* Nail SVG container */
+.nail-svg {
+  width: 75%;
+  height: 80%;
+  display: block;
+  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.25));
+}
+
+/* Sparkle / shine animation overlay */
+.gallery__item .nail-svg .nail-shine {
+  animation: nailShine 6s ease-in-out infinite;
+}
+@keyframes nailShine {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 0.85; }
+}
+.gallery__item:hover .nail-svg {
+  transform: scale(1.05) rotate(-2deg);
+  transition: transform 0.6s var(--ease);
+}
+
+/* Old gradient fallbacks no longer needed */
+.gallery__art::after { display: none; }
+
+/* ============================================
+   About section — replace CSS nails with SVG
+   ============================================ */
+.about__card--one {
+  padding: 30px 22px;
+}
+.about__hand {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 18px 30px rgba(184, 132, 100, 0.4));
+}
+
+/* Header: shrink slightly for accent balance */
+.nav__cta {
+  background: linear-gradient(135deg, var(--accent-2) 0%, var(--accent) 60%, var(--accent-3) 100%);
+}
+.nav__cta:hover {
+  box-shadow: 0 18px 40px -12px var(--accent);
+}
+
+/* Service "Rezerva" link uses accent */
+.service__book { color: var(--accent-3); }
+.service__book:hover { color: var(--accent); }
+.service--accent .service__book { color: var(--accent-2); }
+
+/* Highlight word in section titles can use accent variant */
+.section-title em.accent { color: var(--accent); }
+
+/* Sticky badge using accent */
+.badge-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--accent-soft);
+  color: var(--accent-3);
+  border: 1px solid rgba(78, 191, 184, 0.3);
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.badge-accent::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+/* Booking summary border accent on full data */
+.booking__summary {
+  border-color: rgba(78, 191, 184, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+.booking__summary::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--gold), var(--accent));
+  background-size: 200% 100%;
+  animation: gradientShift 6s ease-in-out infinite;
+}
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 0; }
+  50% { background-position: 100% 0; }
+}
+
+/* Page-head crumbs accent */
+.page-head__crumbs span:last-child { color: var(--accent-3) !important; }
+.page-head__crumbs span:not(:last-child) { color: var(--accent); }
+.page-head__crumbs a:hover { color: var(--accent); }
+
+/* Eyebrow with bullet accent */
+.eyebrow::before { background: var(--accent); }
+
+/* Magnetic button hover gold inverts to accent on dark */
+.process .btn--ghost:hover,
+.contact .btn--ghost:hover {
+  background: var(--accent);
+  color: var(--ivory);
+  border-color: var(--accent);
+}
+
+/* Stat star color stays gold but accent dot for stars row */
+
+/* Ensure circle icons have proper sizing for embedded SVGs */
+.contact__ico {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact__ico svg { display: block; }
+
+/* Footer brand mark accent border */
+.footer__mark {
+  background: linear-gradient(135deg, rgba(78, 191, 184, 0.2), transparent);
+  border-color: var(--accent);
+  color: var(--gold-2);
+}
+
+/* Step connector when active */
+.stepper__sep { background: var(--line); transition: background 0.4s var(--ease); }
+.stepper__item.is-done + .stepper__sep { background: var(--accent); }
+
+/* Scroll progress bar gets accent */
+.scroll-progress {
+  background: linear-gradient(90deg, var(--accent), var(--gold), var(--accent));
+}
+
+/* Small responsive tweaks */
+@media (max-width: 600px) {
+  .review { padding: 24px 22px; }
+  .review p { font-size: 16px; }
+}
+

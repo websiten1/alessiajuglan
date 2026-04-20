@@ -71,7 +71,7 @@
         <div class="container footer__inner">
           <div class="footer__brand">
             <span class="footer__mark">A<span class="amp">·</span>J</span>
-            <p>Alessia Juglan Nail Artist — Manichiură premium în Iași, cu atenție la detaliu și produse de top.</p>
+            <p>Alessia Juglan Nail Artist — Manichiură premium în Iași, cu atentie la detaliu și produse de top.</p>
           </div>
           <div class="footer__links">
             <a href="index.html">Acasă</a>
@@ -140,29 +140,7 @@
     mobile.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => toggle(false)));
   }
 
-  // ---------- Cursor glow + dot ----------
-  const glow = document.querySelector('.cursor-glow');
-  const dot = document.querySelector('.cursor-dot');
-  if ((glow || dot) && matchMedia('(hover: hover)').matches) {
-    let tx = 0, ty = 0, cx = 0, cy = 0, dx = 0, dy = 0;
-    window.addEventListener('mousemove', (e) => { tx = e.clientX; ty = e.clientY; });
-    const animate = () => {
-      cx += (tx - cx) * 0.12;
-      cy += (ty - cy) * 0.12;
-      dx += (tx - dx) * 0.35;
-      dy += (ty - dy) * 0.35;
-      if (glow) glow.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
-      if (dot) dot.style.transform = `translate(${dx}px, ${dy}px) translate(-50%, -50%)`;
-      requestAnimationFrame(animate);
-    };
-    animate();
-
-    document.querySelectorAll('a, button, .service, .book-service, .time-slot, .calendar__cell, .gallery__item')
-      .forEach((el) => {
-        el.addEventListener('mouseenter', () => dot?.classList.add('is-hover'));
-        el.addEventListener('mouseleave', () => dot?.classList.remove('is-hover'));
-      });
-  }
+  // (custom cursor removed by design)
 
   // ---------- Intersection Observer for reveals ----------
   const revealSelector = '.reveal, .reveal-x, .reveal-scale, .reveal-clip, .split-line, .split-words, [data-stagger], .process__line';
