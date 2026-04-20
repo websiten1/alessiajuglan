@@ -20,11 +20,11 @@
   --line: rgba(26, 21, 18, 0.12);
   --line-light: rgba(26, 21, 18, 0.06);
 
-  /* Turquoise accent color (used for evidence/highlights) */
-  --accent: #2a9d96;
-  --accent-2: #4ebfb8;
-  --accent-3: #16726c;
-  --accent-soft: rgba(42, 157, 150, 0.1);
+  /* Accent = gold (classic). Everywhere --accent is used it maps to the warm gold palette. */
+  --accent: #b89868;
+  --accent-2: #d4b783;
+  --accent-3: #8a6f45;
+  --accent-soft: rgba(184, 152, 104, 0.1);
 
   --serif: "Cormorant Garamond", "Times New Roman", serif;
   --display: "Italiana", "Cormorant Garamond", serif;
@@ -1622,24 +1622,24 @@ input, textarea, select { font-family: inherit; color: inherit; }
   border: 1px solid rgba(212, 183, 131, 0.3);
 }
 .contact__open.is-open {
-  background: rgba(78, 191, 184, 0.15);
-  color: var(--accent-2);
-  border-color: rgba(78, 191, 184, 0.4);
+  background: rgba(130, 180, 120, 0.12);
+  color: #7ba66f;
+  border-color: rgba(130, 180, 120, 0.3);
 }
 .contact__open.is-open::before {
   content: "";
   display: inline-block;
   width: 7px; height: 7px;
   border-radius: 50%;
-  background: var(--accent-2);
+  background: #7ba66f;
   margin-right: 8px;
   vertical-align: middle;
-  box-shadow: 0 0 0 3px rgba(78, 191, 184, 0.3);
-  animation: pulseAccent 2s infinite;
+  box-shadow: 0 0 0 3px rgba(130, 180, 120, 0.3);
+  animation: pulseSoft 2s infinite;
 }
-@keyframes pulseAccent {
-  0%, 100% { box-shadow: 0 0 0 3px rgba(78, 191, 184, 0.3); }
-  50% { box-shadow: 0 0 0 6px rgba(78, 191, 184, 0); }
+@keyframes pulseSoft {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(130, 180, 120, 0.3); }
+  50% { box-shadow: 0 0 0 6px rgba(130, 180, 120, 0); }
 }
 .contact__open.is-closed {
   background: rgba(200, 100, 100, 0.12);
@@ -1845,19 +1845,19 @@ input, textarea, select { font-family: inherit; color: inherit; }
   transition: all 0.4s var(--ease);
 }
 .stepper__item.is-done .stepper__circle {
-  background: var(--accent);
+  background: var(--gold);
   color: var(--ivory);
-  border-color: var(--accent);
+  border-color: var(--gold);
 }
 .stepper__item.is-active {
-  color: var(--accent-3);
+  color: var(--charcoal);
 }
 .stepper__item.is-active .stepper__circle {
-  background: var(--accent);
+  background: var(--charcoal);
   color: var(--ivory);
-  border-color: var(--accent);
-  transform: scale(1.1);
-  box-shadow: 0 0 0 5px var(--accent-soft), 0 8px 18px -8px var(--accent);
+  border-color: var(--charcoal);
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px -10px rgba(26, 21, 18, 0.4);
 }
 .stepper__sep {
   width: 36px;
@@ -1919,9 +1919,9 @@ input, textarea, select { font-family: inherit; color: inherit; }
   background: linear-gradient(135deg, var(--ivory) 0%, rgba(212, 183, 131, 0.06) 100%);
 }
 .book-service.is-selected {
-  border-color: var(--accent);
-  background: linear-gradient(135deg, var(--ivory) 0%, rgba(78, 191, 184, 0.08) 100%);
-  box-shadow: 0 10px 30px -15px var(--accent);
+  border-color: var(--gold);
+  background: linear-gradient(135deg, var(--ivory) 0%, rgba(212, 183, 131, 0.12) 100%);
+  box-shadow: 0 10px 30px -15px rgba(184, 152, 104, 0.4);
 }
 .book-service__radio {
   width: 22px;
@@ -1933,8 +1933,8 @@ input, textarea, select { font-family: inherit; color: inherit; }
   transition: all 0.3s var(--ease);
 }
 .book-service.is-selected .book-service__radio {
-  border-color: var(--accent);
-  background: var(--accent);
+  border-color: var(--gold);
+  background: var(--gold);
 }
 .book-service.is-selected .book-service__radio::after {
   content: "";
@@ -2056,16 +2056,16 @@ input, textarea, select { font-family: inherit; color: inherit; }
   text-decoration: line-through;
 }
 .calendar__cell.is-today {
-  border-color: var(--accent);
-  color: var(--accent-3);
+  border-color: var(--gold);
+  color: var(--gold-3);
   font-weight: 500;
 }
 .calendar__cell.is-selected {
-  background: var(--accent);
+  background: var(--charcoal);
   color: var(--ivory);
   font-weight: 500;
-  transform: scale(1.08);
-  box-shadow: 0 8px 20px -8px var(--accent);
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px -10px rgba(26, 21, 18, 0.4);
 }
 
 /* Step 3: time slots */
@@ -2092,11 +2092,11 @@ input, textarea, select { font-family: inherit; color: inherit; }
   transform: translateY(-2px);
 }
 .time-slot.is-selected {
-  background: var(--accent);
+  background: var(--charcoal);
   color: var(--ivory);
-  border-color: var(--accent);
+  border-color: var(--charcoal);
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px -10px var(--accent);
+  box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.4);
 }
 .time-slot.is-disabled {
   background: var(--cream-2);
@@ -2628,36 +2628,9 @@ input, textarea, select { font-family: inherit; color: inherit; }
 .mt-30 { margin-top: 30px; }
 
 /* ============================================
-   v3 — accent color, redesign reviews,
+   v3 — classic gold refinements, reviews,
    centered icons, real nail SVG art
    ============================================ */
-
-/* --- Active gallery / service tab uses accent --- */
-.service-tab.is-active {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: var(--ivory);
-  box-shadow: 0 8px 22px -10px var(--accent);
-}
-
-/* --- Hours today highlight --- */
-.contact__hours li.today,
-.contact-aside .hours-list li.today {
-  color: var(--accent-2) !important;
-  font-weight: 500;
-  position: relative;
-}
-.contact__hours li.today::before,
-.contact-aside .hours-list li.today::before {
-  content: "";
-  position: absolute;
-  left: -14px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 4px; height: 18px;
-  background: var(--accent);
-  border-radius: 4px;
-}
 
 /* --- Centered icons for policy & contact-card circles --- */
 .policy__ico,
@@ -2672,31 +2645,31 @@ input, textarea, select { font-family: inherit; color: inherit; }
 .policy__ico {
   width: 56px;
   height: 56px;
-  background: linear-gradient(135deg, var(--accent-soft) 0%, transparent 100%);
-  border-color: rgba(78, 191, 184, 0.4);
-  color: var(--accent);
-  font-size: 22px;
+  background: linear-gradient(135deg, rgba(212, 183, 131, 0.15) 0%, transparent 100%);
+  border: 1px solid rgba(184, 152, 104, 0.25);
+  color: var(--gold-3);
+  font-size: 20px;
   font-family: var(--display);
 }
 .policy:hover .policy__ico {
-  background: var(--accent);
-  color: var(--ivory);
-  border-color: var(--accent);
-  transform: rotate(-8deg) scale(1.05);
+  background: var(--charcoal);
+  color: var(--gold-2);
+  border-color: var(--charcoal);
+  transform: rotate(-6deg) scale(1.04);
   transition: all 0.4s var(--ease);
 }
 .contact-card__ico {
   width: 58px;
   height: 58px;
-  border: 1px solid rgba(78, 191, 184, 0.3);
-  background: linear-gradient(135deg, rgba(78, 191, 184, 0.12), rgba(78, 191, 184, 0.04));
-  color: var(--accent);
+  border: 1px solid rgba(184, 152, 104, 0.25);
+  background: linear-gradient(135deg, rgba(212, 183, 131, 0.15), rgba(212, 183, 131, 0.04));
+  color: var(--gold-3);
 }
 .contact-card:hover .contact-card__ico {
-  background: var(--accent);
-  color: var(--ivory);
-  border-color: var(--accent);
-  transform: scale(1.08);
+  background: var(--charcoal);
+  color: var(--gold-2);
+  border-color: var(--charcoal);
+  transform: scale(1.06);
 }
 .contact-card__ico svg { display: block; }
 
@@ -2732,7 +2705,7 @@ input, textarea, select { font-family: inherit; color: inherit; }
 }
 .review__avatar--gold { background: linear-gradient(135deg, var(--gold-2), var(--gold), var(--gold-3)); }
 .review__avatar--rose { background: linear-gradient(135deg, #e9c8b8, var(--rose), #b88870); }
-.review__avatar--accent { background: linear-gradient(135deg, var(--accent-2), var(--accent), var(--accent-3)); }
+.review__avatar--accent { background: linear-gradient(135deg, #c9a980, var(--gold-3), #5a4528); color: var(--gold-2); }
 .review__avatar--charcoal { background: linear-gradient(135deg, #4a3a30, var(--charcoal)); color: var(--gold-2); }
 .review__avatar--blush { background: linear-gradient(135deg, #f5d8c8, #e0a890, #b07060); }
 
@@ -2743,9 +2716,9 @@ input, textarea, select { font-family: inherit; color: inherit; }
   right: -2px;
   width: 18px; height: 18px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--charcoal);
   border: 2px solid var(--ivory);
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d4b783' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
   background-size: 11px;
   background-position: center;
   background-repeat: no-repeat;
@@ -2765,16 +2738,16 @@ input, textarea, select { font-family: inherit; color: inherit; }
   align-items: center;
   gap: 5px;
   font-size: 11px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--accent-3);
+  color: var(--gold-3);
   font-weight: 500;
 }
 .review__person span::before {
   content: "";
   width: 5px; height: 5px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--gold);
 }
 
 .review__stars {
@@ -2802,13 +2775,13 @@ input, textarea, select { font-family: inherit; color: inherit; }
 .review p::before {
   content: "\201C";
   position: absolute;
-  left: -2px;
-  top: -10px;
+  left: -4px;
+  top: -18px;
   font-family: var(--display);
-  font-size: 50px;
-  color: var(--accent);
+  font-size: 64px;
+  color: var(--gold);
   line-height: 1;
-  opacity: 0.55;
+  opacity: 0.45;
 }
 .review__meta {
   display: flex;
@@ -2831,80 +2804,83 @@ input, textarea, select { font-family: inherit; color: inherit; }
   color: var(--gold);
 }
 .review__service {
-  color: var(--accent-3);
+  color: var(--gold-3);
   font-weight: 500;
 }
 
 /* Hover */
 .review:hover {
   transform: translateY(-6px);
-  border-color: var(--accent);
-  box-shadow: 0 30px 50px -25px rgba(42, 157, 150, 0.25);
+  border-color: var(--gold);
+  box-shadow: 0 30px 50px -25px rgba(184, 152, 104, 0.3);
 }
 
-/* --- Reviews score badge — accent --- */
+/* --- Reviews score badge — classic --- */
 .reviews__score {
-  background: linear-gradient(135deg, var(--ivory), rgba(78, 191, 184, 0.05));
-  border-color: rgba(78, 191, 184, 0.25);
+  background: linear-gradient(135deg, var(--ivory), rgba(212, 183, 131, 0.08));
+  border-color: rgba(184, 152, 104, 0.25);
 }
-.reviews__score strong { color: var(--accent-3); }
+.reviews__score strong { color: var(--charcoal); }
 
 /* ============================================
    Real nail art SVG illustrations
    ============================================ */
 
 .gallery__art {
-  background: linear-gradient(180deg, #fdf2e8 0%, #f0d3c0 100%);
   display: flex;
   align-items: center;
   justify-content: center;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 248, 238, 0.9) 0%, transparent 55%),
+    linear-gradient(160deg, #f5e4d1 0%, #e9c9ad 55%, #c89879 100%);
 }
-.gallery__art::before {
-  content: none; /* reset */
-}
-.gallery__art--milky,
-.gallery__art--chrome,
-.gallery__art--rose,
-.gallery__art--3d,
-.gallery__art--red,
-.gallery__art--nude,
-.gallery__art--burgundy,
-.gallery__art--black,
-.gallery__art--french,
-.gallery__art--marble,
-.gallery__art--magenta {
-  background: linear-gradient(180deg, #fdf2e8 0%, #efd5c2 100%);
-}
-.gallery__art--chrome,
-.gallery__art--3d,
+.gallery__art::before { content: none; }
+.gallery__art::after { display: none; }
+
+/* Dark studio backdrop variants — for designs that need contrast */
 .gallery__art--black,
 .gallery__art--burgundy {
-  background: linear-gradient(180deg, #251c18 0%, #1a1310 100%);
+  background:
+    radial-gradient(circle at 30% 20%, rgba(212, 183, 131, 0.18) 0%, transparent 55%),
+    linear-gradient(160deg, #2b211b 0%, #1b1310 100%);
+}
+.gallery__art--chrome {
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 250, 240, 0.7) 0%, transparent 55%),
+    linear-gradient(160deg, #efe0ce 0%, #c9ae8d 55%, #8d6c4d 100%);
+}
+.gallery__art--3d {
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 245, 225, 0.6) 0%, transparent 50%),
+    linear-gradient(160deg, #f0d7bd 0%, #d2a884 55%, #8f6447 100%);
 }
 
 /* Nail SVG container */
 .nail-svg {
-  width: 75%;
-  height: 80%;
+  width: 72%;
+  max-width: 320px;
+  height: auto;
+  max-height: 92%;
   display: block;
-  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 20px 28px rgba(40, 20, 10, 0.35));
 }
 
-/* Sparkle / shine animation overlay */
+/* Gentle shine animation */
 .gallery__item .nail-svg .nail-shine {
-  animation: nailShine 6s ease-in-out infinite;
+  animation: nailShine 7s ease-in-out infinite;
+  transform-origin: center;
 }
 @keyframes nailShine {
   0%, 100% { opacity: 0.55; }
-  50% { opacity: 0.85; }
+  50% { opacity: 0.92; }
 }
 .gallery__item:hover .nail-svg {
-  transform: scale(1.05) rotate(-2deg);
-  transition: transform 0.6s var(--ease);
+  transform: translateY(-4px) scale(1.04);
+  transition: transform 0.7s var(--ease);
 }
-
-/* Old gradient fallbacks no longer needed */
-.gallery__art::after { display: none; }
+.gallery__item .nail-svg {
+  transition: transform 0.7s var(--ease);
+}
 
 /* ============================================
    About section — replace CSS nails with SVG
@@ -2918,83 +2894,6 @@ input, textarea, select { font-family: inherit; color: inherit; }
   filter: drop-shadow(0 18px 30px rgba(184, 132, 100, 0.4));
 }
 
-/* Header: shrink slightly for accent balance */
-.nav__cta {
-  background: linear-gradient(135deg, var(--accent-2) 0%, var(--accent) 60%, var(--accent-3) 100%);
-}
-.nav__cta:hover {
-  box-shadow: 0 18px 40px -12px var(--accent);
-}
-
-/* Service "Rezerva" link uses accent */
-.service__book { color: var(--accent-3); }
-.service__book:hover { color: var(--accent); }
-.service--accent .service__book { color: var(--accent-2); }
-
-/* Highlight word in section titles can use accent variant */
-.section-title em.accent { color: var(--accent); }
-
-/* Sticky badge using accent */
-.badge-accent {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  background: var(--accent-soft);
-  color: var(--accent-3);
-  border: 1px solid rgba(78, 191, 184, 0.3);
-  border-radius: 999px;
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-.badge-accent::before {
-  content: "";
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-soft);
-}
-
-/* Booking summary border accent on full data */
-.booking__summary {
-  border-color: rgba(78, 191, 184, 0.2);
-  position: relative;
-  overflow: hidden;
-}
-.booking__summary::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent), var(--gold), var(--accent));
-  background-size: 200% 100%;
-  animation: gradientShift 6s ease-in-out infinite;
-}
-@keyframes gradientShift {
-  0%, 100% { background-position: 0% 0; }
-  50% { background-position: 100% 0; }
-}
-
-/* Page-head crumbs accent */
-.page-head__crumbs span:last-child { color: var(--accent-3) !important; }
-.page-head__crumbs span:not(:last-child) { color: var(--accent); }
-.page-head__crumbs a:hover { color: var(--accent); }
-
-/* Eyebrow with bullet accent */
-.eyebrow::before { background: var(--accent); }
-
-/* Magnetic button hover gold inverts to accent on dark */
-.process .btn--ghost:hover,
-.contact .btn--ghost:hover {
-  background: var(--accent);
-  color: var(--ivory);
-  border-color: var(--accent);
-}
-
-/* Stat star color stays gold but accent dot for stars row */
-
 /* Ensure circle icons have proper sizing for embedded SVGs */
 .contact__ico {
   display: flex;
@@ -3003,20 +2902,13 @@ input, textarea, select { font-family: inherit; color: inherit; }
 }
 .contact__ico svg { display: block; }
 
-/* Footer brand mark accent border */
-.footer__mark {
-  background: linear-gradient(135deg, rgba(78, 191, 184, 0.2), transparent);
-  border-color: var(--accent);
-  color: var(--gold-2);
-}
-
-/* Step connector when active */
+/* Step connector when done uses gold */
 .stepper__sep { background: var(--line); transition: background 0.4s var(--ease); }
-.stepper__item.is-done + .stepper__sep { background: var(--accent); }
+.stepper__item.is-done + .stepper__sep { background: var(--gold); }
 
-/* Scroll progress bar gets accent */
+/* Scroll progress bar — elegant gold */
 .scroll-progress {
-  background: linear-gradient(90deg, var(--accent), var(--gold), var(--accent));
+  background: linear-gradient(90deg, var(--gold-2), var(--gold), var(--gold-3));
 }
 
 /* Small responsive tweaks */
